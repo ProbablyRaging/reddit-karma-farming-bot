@@ -82,7 +82,7 @@ BOT_SCHEDULES = [
 if os.environ.get('PORT'):
   # This is heroku, use a default schedule
   if not os.environ.get('NOSCHEDULE'):
-    USE_SLEEP_SCHEDULE = True
+    USE_SLEEP_SCHEDULE = False
     BOT_SCHEDULES = [
       {"days": 0, "schedule": [((4,00),(5,00)), ((17,30),(19,30))]},
       {"days": 4, "schedule": [((8,00),(10,00)), ((20,30),(23,20))]},
