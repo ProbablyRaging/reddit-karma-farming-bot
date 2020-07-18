@@ -21,7 +21,7 @@ import string
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_DIR = os.path.join(BASE_DIR, "brains")
 MAIN_DB = os.path.join(BASE_DIR, "brains/brain.db")
-MAIN_DB_MIN_SIZE = "50mb"
+MAIN_DB_MIN_SIZE = "1mb"
 MAIN_DB_MAX_SIZE = "300mb"
 #MAIN_DB = DB_DIR + "/brain.db"
 SCORE_THRESHOLD = 0  # downvote
@@ -75,8 +75,8 @@ DO_WE_ADD_PARAMS_REUPLOAD = False
 # You can add multiple schedules to be run after x days of the bots life
 USE_SLEEP_SCHEDULE = False
 BOT_SCHEDULES = [
-  {"days": 0, "schedule": [((1,00),(12,00)), ((13,30),(23,30))]},
-  {"days": 4, "schedule": [((1,00),(12,00)), ((13,30),(23,30))]},
+  {"days": 0, "schedule": [((0,10),(12,00)), ((12,10),(23,50))]},
+  {"days": 4, "schedule": [((0,10),(12,00)), ((12,10),(23,50))]},
   ]
 
 if os.environ.get('PORT'):
@@ -84,9 +84,9 @@ if os.environ.get('PORT'):
   if not os.environ.get('NOSCHEDULE'):
     USE_SLEEP_SCHEDULE = True
     BOT_SCHEDULES = [
-      {"days": 0, "schedule": [((1,00),(12,00)), ((13,30),(23,30))]},
-      {"days": 4, "schedule": [((1,00),(12,00)), ((13,30),(23,30))]},
-      {"days": 12, "schedule": [((1,00),(12,00)), ((13,30),(23,30))]},
+      {"days": 0, "schedule": [((0,10),(12,00)), ((12,10),(23,50))]},
+      {"days": 4, "schedule": [((0,10),(12,00)), ((12,10),(23,50))]},
+      {"days": 12, "schedule": [((0,10),(12,00)), ((12,10),(23,50))]},
       ]
 
 SCHEDULES = []
